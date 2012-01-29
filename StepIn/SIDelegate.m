@@ -8,8 +8,10 @@
 
 #import "SIDelegate.h"
 #import "SIInjector.h"
-@implementation SIDelegate
+#import "AlertViewController.h"
 
+
+@implementation SIDelegate
 @synthesize window = window_;
 
 

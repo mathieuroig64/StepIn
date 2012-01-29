@@ -6,9 +6,15 @@
 //  Copyright (c) 2012 Kadrige. All rights reserved.
 //
 
+//Main
 #import "SIInjector.h"
 #import "SIDelegate.h"
 #import "AppScope.h"
+
+//Classes
+#import "AlertViewController.h"
+#import "MyAgentsViewController.h"
+#import "LoginViewController.h"
 
 @implementation SIInjector
 
@@ -56,24 +62,18 @@
 	
 	NSMutableArray *tabControllers = [NSMutableArray array];
 	
-  UIImage *imgPlanning = [UIImage imageNamed:@"icon_tabBar_planning.png"];
-	UIImage *imgEpisodes = [UIImage imageNamed:@"icon_tabBar_episodes.png"];
-	UIImage *imgSeries = [UIImage imageNamed:@"icon_tabBar_series.png"];
-	UIImage *imgAccount = [UIImage imageNamed:@"icon_tabBar_compte.png"];
+  UIImage *imgAlert = [UIImage imageNamed:@"alert.png"];
+  UIImage * imgAgents = [UIImage imageNamed:@"agents.png"];
 	
 	
 	NSArray *images = [NSArray arrayWithObjects:
-                     imgPlanning, 
-                     imgEpisodes, 
-                     imgSeries,
-                     imgAccount,
+                     imgAlert, 
+                     imgAgents,
                      nil];
 	
 	NSArray *titles = [NSArray arrayWithObjects:
-                     NSLocalizedString(@"TAB_MY_PLANNING", nil),
-                     NSLocalizedString(@"TAB_MY_EPISODES", nil),
-                     NSLocalizedString(@"TAB_MY_SERIES", nil),
-                     NSLocalizedString(@"TAB_MY_ACCOUNT", nil),
+                     @"Alert",
+                     @"My Agents",
                      nil];
 	
 	NSArray *controllers = 
@@ -95,33 +95,66 @@
 	tabBarController.viewControllers = tabControllers;
 	[tabBarController setDelegate:appScope.appDelegate];	
 	return tabBarController;
-  
 }
 
 +(NSArray*)injectTabBarControllers:(AppScope*)appScope{
-	/*
-   MyPlanningController * planningController = 
-   [STInjector injectMyPlanningController:appScope];
-   
-   MyEpisodesController * episodesController =
-   [STInjector injectMyEpisodesController:appScope];
-   
-   MySeriesController * seriesController =
-   [STInjector injectMySeriesController:appScope];
-   
-   MyAccountController * accountController =
-   [STInjector injectMyAccountController:appScope];
-   
-   NSArray *viewControllers = [NSArray arrayWithObjects:
-   planningController,
-   episodesController,
-   seriesController, 
-   accountController,
-   nil];
-   
-   return viewControllers;
-   */
-  return nil;
+	
+  AlertViewControllerProvider alertProvider = 
+  [self injectAlertViewControllerProvider:appScope];
+  
+  AlertViewController * alertController = alertProvider(); 
+  
+  MyAgentsViewControllerProvider myAgentsProvider = 
+  [self injectMyAgentsViewControllerProvider:appScope];
+  
+  MyAgentsViewController * agentsController = myAgentsProvider();
+  
+  NSArray *viewControllers = [NSArray arrayWithObjects:
+                              alertController,
+                              agentsController,
+                              nil];
+  
+  return viewControllers;
 }
+
+#pragma mark AlertViewControllerProvider
++(AlertViewControllerProvider)injectAlertViewControllerProvider:(AppScope*)appScope{
+ 	AlertViewControllerProvider provider = ^(){
+    
+		AlertViewController * controller = 
+    [[[AlertViewController alloc] initWithNibName:@"AlertViewController" 
+                                           bundle:nil] autorelease];
+		return controller;
+	};
+	return [[provider copy] autorelease]; 
+}
+
+#pragma mark MyAgentsViewControllerProvider
++(MyAgentsViewControllerProvider)injectMyAgentsViewControllerProvider:(AppScope*)appScope{
+ 	MyAgentsViewControllerProvider provider = ^(){
+    
+    LoginViewControllerProvider loginProvider = [self injectLoginViewControllerProvider:appScope];
+    
+		MyAgentsViewController * controller = 
+    [[[MyAgentsViewController alloc] initWithNibName:@"MyAgentsViewController" 
+                                              bundle:nil
+                                       loginProvider:loginProvider] autorelease];
+		return controller;
+	};
+	return [[provider copy] autorelease];  
+}
+
+#pragma mark LoginViewControllerProvider
++(LoginViewControllerProvider)injectLoginViewControllerProvider:(AppScope*)appScope{
+  LoginViewControllerProvider provider = ^(){
+    
+		LoginViewController * controller = 
+    [[[LoginViewController alloc] initWithNibName:@"LoginViewController" 
+                                           bundle:nil] autorelease];
+		return controller;
+	};
+	return [[provider copy] autorelease];  
+}
+
 
 @end

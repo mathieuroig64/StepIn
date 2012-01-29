@@ -9,6 +9,18 @@
 
 @class AppScope;
 @class SIDelegate;
+@class AlertViewController;
+@class MyAgentsViewController;
+@class LoginViewController;
 
-//TabBar
+#pragma mark UITabBarController
 typedef UITabBarController* (^TabBarProvider)();
+
+#pragma mark AlertViewController
+typedef AlertViewController *(^AlertViewControllerProvider)();
+
+#pragma mark AccountViewController
+typedef MyAgentsViewController *(^MyAgentsViewControllerProvider)();
+
+#pragma mark LoginViewController
+typedef LoginViewController *(^LoginViewControllerProvider)();

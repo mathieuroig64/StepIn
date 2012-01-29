@@ -23,4 +23,13 @@
 +(UITabBarController *)tabBarController:(AppScope*)appScope;
 +(NSArray*)injectTabBarControllers:(AppScope*)appScope;
 
+#pragma mark AlertViewControllerProvider
++(AlertViewControllerProvider)injectAlertViewControllerProvider:(AppScope*)appScope;
+
+#pragma mark MyAgentsViewControllerProvider
++(MyAgentsViewControllerProvider)injectMyAgentsViewControllerProvider:(AppScope*)appScope;
+
+#pragma mark LoginViewControllerProvider
++(LoginViewControllerProvider)injectLoginViewControllerProvider:(AppScope*)appScope;
+
 @end
