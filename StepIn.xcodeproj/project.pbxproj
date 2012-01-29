@@ -1,0 +1,290 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D1039FA514D580B0007EB57D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1039FA414D580B0007EB57D /* UIKit.framework */; };
+		D1039FA714D580B0007EB57D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1039FA614D580B0007EB57D /* Foundation.framework */; };
+		D1039FA914D580B0007EB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1039FA814D580B0007EB57D /* CoreGraphics.framework */; };
+		D1039FAF14D580B0007EB57D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1039FAD14D580B0007EB57D /* InfoPlist.strings */; };
+		D1039FB114D580B0007EB57D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D1039FB014D580B0007EB57D /* main.m */; };
+		D1039FB514D580B0007EB57D /* SIDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D1039FB414D580B0007EB57D /* SIDelegate.m */; };
+		D1039FC314D58110007EB57D /* SIUIApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D1039FC214D58110007EB57D /* SIUIApplication.m */; };
+		D1039FC614D58144007EB57D /* SIInjector.m in Sources */ = {isa = PBXBuildFile; fileRef = D1039FC514D58144007EB57D /* SIInjector.m */; };
+		D1039FC914D581BF007EB57D /* AppScope.m in Sources */ = {isa = PBXBuildFile; fileRef = D1039FC814D581BF007EB57D /* AppScope.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D1039FA014D580B0007EB57D /* StepIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StepIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1039FA414D580B0007EB57D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D1039FA614D580B0007EB57D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D1039FA814D580B0007EB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D1039FAC14D580B0007EB57D /* StepIn-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StepIn-Info.plist"; sourceTree = "<group>"; };
+		D1039FAE14D580B0007EB57D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D1039FB014D580B0007EB57D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D1039FB214D580B0007EB57D /* StepIn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StepIn-Prefix.pch"; sourceTree = "<group>"; };
+		D1039FB314D580B0007EB57D /* SIDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SIDelegate.h; sourceTree = "<group>"; };
+		D1039FB414D580B0007EB57D /* SIDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SIDelegate.m; sourceTree = "<group>"; };
+		D1039FC114D58110007EB57D /* SIUIApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIUIApplication.h; sourceTree = "<group>"; };
+		D1039FC214D58110007EB57D /* SIUIApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIUIApplication.m; sourceTree = "<group>"; };
+		D1039FC414D58144007EB57D /* SIInjector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIInjector.h; sourceTree = "<group>"; };
+		D1039FC514D58144007EB57D /* SIInjector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIInjector.m; sourceTree = "<group>"; };
+		D1039FC714D581BF007EB57D /* AppScope.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppScope.h; sourceTree = "<group>"; };
+		D1039FC814D581BF007EB57D /* AppScope.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppScope.m; sourceTree = "<group>"; };
+		D1039FCA14D581ED007EB57D /* TypeDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDef.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1039F9D14D580B0007EB57D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1039FA514D580B0007EB57D /* UIKit.framework in Frameworks */,
+				D1039FA714D580B0007EB57D /* Foundation.framework in Frameworks */,
+				D1039FA914D580B0007EB57D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D1039F9514D580B0007EB57D = {
+			isa = PBXGroup;
+			children = (
+				D1039FAA14D580B0007EB57D /* StepIn */,
+				D1039FA314D580B0007EB57D /* Frameworks */,
+				D1039FA114D580B0007EB57D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D1039FA114D580B0007EB57D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1039FA014D580B0007EB57D /* StepIn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D1039FA314D580B0007EB57D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1039FA414D580B0007EB57D /* UIKit.framework */,
+				D1039FA614D580B0007EB57D /* Foundation.framework */,
+				D1039FA814D580B0007EB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1039FAA14D580B0007EB57D /* StepIn */ = {
+			isa = PBXGroup;
+			children = (
+				D1039FC014D580FA007EB57D /* main */,
+				D1039FAB14D580B0007EB57D /* Supporting Files */,
+			);
+			path = StepIn;
+			sourceTree = "<group>";
+		};
+		D1039FAB14D580B0007EB57D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D1039FAC14D580B0007EB57D /* StepIn-Info.plist */,
+				D1039FAD14D580B0007EB57D /* InfoPlist.strings */,
+				D1039FB014D580B0007EB57D /* main.m */,
+				D1039FB214D580B0007EB57D /* StepIn-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D1039FC014D580FA007EB57D /* main */ = {
+			isa = PBXGroup;
+			children = (
+				D1039FCA14D581ED007EB57D /* TypeDef.h */,
+				D1039FC114D58110007EB57D /* SIUIApplication.h */,
+				D1039FC214D58110007EB57D /* SIUIApplication.m */,
+				D1039FC414D58144007EB57D /* SIInjector.h */,
+				D1039FC514D58144007EB57D /* SIInjector.m */,
+				D1039FB314D580B0007EB57D /* SIDelegate.h */,
+				D1039FB414D580B0007EB57D /* SIDelegate.m */,
+				D1039FC714D581BF007EB57D /* AppScope.h */,
+				D1039FC814D581BF007EB57D /* AppScope.m */,
+			);
+			name = main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D1039F9F14D580B0007EB57D /* StepIn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D1039FB814D580B0007EB57D /* Build configuration list for PBXNativeTarget "StepIn" */;
+			buildPhases = (
+				D1039F9C14D580B0007EB57D /* Sources */,
+				D1039F9D14D580B0007EB57D /* Frameworks */,
+				D1039F9E14D580B0007EB57D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StepIn;
+			productName = StepIn;
+			productReference = D1039FA014D580B0007EB57D /* StepIn.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D1039F9714D580B0007EB57D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Kadrige;
+			};
+			buildConfigurationList = D1039F9A14D580B0007EB57D /* Build configuration list for PBXProject "StepIn" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D1039F9514D580B0007EB57D;
+			productRefGroup = D1039FA114D580B0007EB57D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D1039F9F14D580B0007EB57D /* StepIn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D1039F9E14D580B0007EB57D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1039FAF14D580B0007EB57D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D1039F9C14D580B0007EB57D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1039FB114D580B0007EB57D /* main.m in Sources */,
+				D1039FB514D580B0007EB57D /* SIDelegate.m in Sources */,
+				D1039FC314D58110007EB57D /* SIUIApplication.m in Sources */,
+				D1039FC614D58144007EB57D /* SIInjector.m in Sources */,
+				D1039FC914D581BF007EB57D /* AppScope.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D1039FAD14D580B0007EB57D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D1039FAE14D580B0007EB57D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D1039FB614D580B0007EB57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D1039FB714D580B0007EB57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D1039FB914D580B0007EB57D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StepIn/StepIn-Prefix.pch";
+				INFOPLIST_FILE = "StepIn/StepIn-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D1039FBA14D580B0007EB57D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StepIn/StepIn-Prefix.pch";
+				INFOPLIST_FILE = "StepIn/StepIn-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D1039F9A14D580B0007EB57D /* Build configuration list for PBXProject "StepIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1039FB614D580B0007EB57D /* Debug */,
+				D1039FB714D580B0007EB57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D1039FB814D580B0007EB57D /* Build configuration list for PBXNativeTarget "StepIn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D1039FB914D580B0007EB57D /* Debug */,
+				D1039FBA14D580B0007EB57D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D1039F9714D580B0007EB57D /* Project object */;
+}
