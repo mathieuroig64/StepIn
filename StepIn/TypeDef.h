@@ -11,7 +11,7 @@
 @class SIDelegate;
 @class AlertViewController;
 @class MyAgentsViewController;
-@class LoginViewController;
+@class AccountViewController;
 
 #pragma mark UITabBarController
 typedef UITabBarController* (^TabBarProvider)();
@@ -23,4 +23,4 @@ typedef AlertViewController *(^AlertViewControllerProvider)();
 typedef MyAgentsViewController *(^MyAgentsViewControllerProvider)();
 
 #pragma mark LoginViewController
-typedef LoginViewController *(^LoginViewControllerProvider)();
+typedef AccountViewController *(^AccountViewControllerProvider)();

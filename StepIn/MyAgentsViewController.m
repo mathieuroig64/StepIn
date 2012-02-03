@@ -7,10 +7,10 @@
 //
 
 #import "MyAgentsViewController.h"
-#import "LoginViewController.h"
+#import "AccountViewController.h"
 
 @interface MyAgentsViewController (PrivateMethods)
-- (void)showLoginController;
+- (void)showAccountController;
 - (void)addAccountButtonToNavigationBar;
 @end
 
@@ -18,17 +18,17 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil 
                bundle:(NSBundle *)nibBundleOrNil
-        loginProvider:(LoginViewControllerProvider)loginProvider
+      accountProvider:(AccountViewControllerProvider)accountProvider
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    loginProvider_ = Block_copy(loginProvider);
+    accountProvider_ = Block_copy(accountProvider);
   }
   return self;
 }
 
 - (void)dealloc {
-  Block_release(loginProvider_);
+  Block_release(accountProvider_);
   [super dealloc];
 }
 
@@ -54,14 +54,14 @@
   UIBarButtonItem * accountButton = [[[UIBarButtonItem alloc] initWithTitle:@"Account"
                                                                       style:UIBarButtonItemStylePlain
                                                                      target:self
-                                                                     action:@selector(showLoginController)] autorelease];
+                                                                     action:@selector(showAccountController)] autorelease];
   [self.navigationItem setRightBarButtonItem:accountButton];
 }
 
-- (void)showLoginController{
-  LoginViewController * loginController = loginProvider_();
+- (void)showAccountController{
+  AccountViewController * accountController = accountProvider_();
   UINavigationController * navigationController = [[[UINavigationController alloc] 
-                                                    initWithRootViewController:loginController] autorelease];
+                                                    initWithRootViewController:accountController] autorelease];
   [self presentModalViewController:navigationController
                           animated:YES];
 }

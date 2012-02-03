@@ -29,7 +29,10 @@
 #pragma mark MyAgentsViewControllerProvider
 +(MyAgentsViewControllerProvider)injectMyAgentsViewControllerProvider:(AppScope*)appScope;
 
-#pragma mark LoginViewControllerProvider
-+(LoginViewControllerProvider)injectLoginViewControllerProvider:(AppScope*)appScope;
+#pragma mark AccountViewControllerProvider
++(AccountViewControllerProvider)injectAccountViewControllerProvider:(AppScope*)appScope;
 
+#pragma mark -
+#pragma mark CoreData
++ (NSManagedObjectContext*)injectContext;
 @end

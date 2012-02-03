@@ -14,7 +14,7 @@
 //Classes
 #import "AlertViewController.h"
 #import "MyAgentsViewController.h"
-#import "LoginViewController.h"
+#import "AccountViewController.h"
 
 @implementation SIInjector
 
@@ -40,7 +40,9 @@
 #pragma mark Appscope
 +(AppScope*)injectAppScope{
   
-  AppScope* appScope = [[[AppScope alloc] init] autorelease];
+  NSManagedObjectContext * context = [self injectContext];
+  
+  AppScope* appScope = [[[AppScope alloc] initWithContext:context] autorelease];
 	return appScope;
 }
 
@@ -133,27 +135,56 @@
 +(MyAgentsViewControllerProvider)injectMyAgentsViewControllerProvider:(AppScope*)appScope{
  	MyAgentsViewControllerProvider provider = ^(){
     
-    LoginViewControllerProvider loginProvider = [self injectLoginViewControllerProvider:appScope];
+    AccountViewControllerProvider accountProvider = [self injectAccountViewControllerProvider:appScope];
     
 		MyAgentsViewController * controller = 
     [[[MyAgentsViewController alloc] initWithNibName:@"MyAgentsViewController" 
                                               bundle:nil
-                                       loginProvider:loginProvider] autorelease];
+                                     accountProvider:accountProvider] autorelease];
 		return controller;
 	};
 	return [[provider copy] autorelease];  
 }
 
-#pragma mark LoginViewControllerProvider
-+(LoginViewControllerProvider)injectLoginViewControllerProvider:(AppScope*)appScope{
-  LoginViewControllerProvider provider = ^(){
+#pragma mark AccountViewControllerProvider
++(AccountViewControllerProvider)injectAccountViewControllerProvider:(AppScope*)appScope{
+  AccountViewControllerProvider provider = ^(){
     
-		LoginViewController * controller = 
-    [[[LoginViewController alloc] initWithNibName:@"LoginViewController" 
-                                           bundle:nil] autorelease];
+		AccountViewController * controller = 
+    [[[AccountViewController alloc] initWithNibName:@"AccountViewController" 
+                                             bundle:nil] autorelease];
 		return controller;
 	};
 	return [[provider copy] autorelease];  
+}
+
+#pragma mark -
+#pragma mark CoreData
++ (NSManagedObjectContext*)injectContext{
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, 
+                                                       NSUserDomainMask, YES);
+  NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
+  NSString *strFilePath = 
+  [basePath stringByAppendingPathComponent:@"/StepIn.sqlite"];
+  DLog(@"%@",strFilePath);
+  NSManagedObjectModel * managedObjectModel = 
+  [NSManagedObjectModel mergedModelFromBundles:nil] ; 
+  NSError *error;
+  NSPersistentStoreCoordinator * persistentStoreCoordinator = 
+  [[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:managedObjectModel] 
+   autorelease];
+  if (![persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                configuration:nil 
+                                                          URL:[NSURL fileURLWithPath:strFilePath]
+                                                      options:nil 
+                                                        error:&error]) {
+    NSLog(@"Unable to addPersistentStoreWithType");
+    exit(-1);
+  } 
+  NSManagedObjectContext *managedObjectContext = 
+  [[[NSManagedObjectContext alloc] init] autorelease];
+  [managedObjectContext setPersistentStoreCoordinator: persistentStoreCoordinator];
+  return managedObjectContext;
 }
 
 

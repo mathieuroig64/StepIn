@@ -10,12 +10,12 @@
 #import "TypeDef.h"
 
 @interface MyAgentsViewController : UIViewController{
-  @private
-  LoginViewControllerProvider loginProvider_;
+@private
+  AccountViewControllerProvider accountProvider_;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil 
                bundle:(NSBundle *)nibBundleOrNil
-        loginProvider:(LoginViewControllerProvider)loginProvider;
+      accountProvider:(AccountViewControllerProvider)accountProvider;
 
 @end
