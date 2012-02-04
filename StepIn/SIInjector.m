@@ -13,8 +13,12 @@
 
 //Classes
 #import "AlertViewController.h"
-#import "MyAgentsViewController.h"
-#import "AccountViewController.h"
+#import "InfoViewController.h"
+#import "MyInfoViewController.h"
+
+//Manager
+#import "UserManager.h"
+#import "ContactManager.h"
 
 @implementation SIInjector
 
@@ -64,8 +68,8 @@
 	
 	NSMutableArray *tabControllers = [NSMutableArray array];
 	
-  UIImage *imgAlert = [UIImage imageNamed:@"alert.png"];
-  UIImage * imgAgents = [UIImage imageNamed:@"agents.png"];
+  UIImage *imgAlert = [UIImage imageNamed:@"help.png"];
+  UIImage * imgAgents = [UIImage imageNamed:@"account.png"];
 	
 	
 	NSArray *images = [NSArray arrayWithObjects:
@@ -74,8 +78,8 @@
                      nil];
 	
 	NSArray *titles = [NSArray arrayWithObjects:
-                     @"Alert",
-                     @"My Agents",
+                     @"Emergency",
+                     @"Info",
                      nil];
 	
 	NSArray *controllers = 
@@ -106,14 +110,14 @@
   
   AlertViewController * alertController = alertProvider(); 
   
-  MyAgentsViewControllerProvider myAgentsProvider = 
-  [self injectMyAgentsViewControllerProvider:appScope];
+  InfoViewControllerProvider infoProvider = 
+  [self injectInfoViewControllerProvider:appScope];
   
-  MyAgentsViewController * agentsController = myAgentsProvider();
+  InfoViewController * infoController = infoProvider();
   
   NSArray *viewControllers = [NSArray arrayWithObjects:
                               alertController,
-                              agentsController,
+                              infoController,
                               nil];
   
   return viewControllers;
@@ -131,32 +135,38 @@
 	return [[provider copy] autorelease]; 
 }
 
-#pragma mark MyAgentsViewControllerProvider
-+(MyAgentsViewControllerProvider)injectMyAgentsViewControllerProvider:(AppScope*)appScope{
- 	MyAgentsViewControllerProvider provider = ^(){
+#pragma mark InfoViewControllerProvider
++(InfoViewControllerProvider)injectInfoViewControllerProvider:(AppScope*)appScope{
+ 	InfoViewControllerProvider provider = ^(){
     
-    AccountViewControllerProvider accountProvider = [self injectAccountViewControllerProvider:appScope];
-    
-		MyAgentsViewController * controller = 
-    [[[MyAgentsViewController alloc] initWithNibName:@"MyAgentsViewController" 
-                                              bundle:nil
-                                     accountProvider:accountProvider] autorelease];
+    UserManager * userManager = [self injectUserManager:appScope];
+    MyInfoViewControllerProvider myInfoProvider = [self injectMyInfoViewControllerProvider:appScope];
+		InfoViewController * controller = 
+    [[[InfoViewController alloc] initWithNibName:@"InfoViewController" 
+                                          bundle:nil
+                                     userManager:userManager
+                                  myInfoProvider:myInfoProvider] autorelease];
 		return controller;
 	};
 	return [[provider copy] autorelease];  
 }
 
-#pragma mark AccountViewControllerProvider
-+(AccountViewControllerProvider)injectAccountViewControllerProvider:(AppScope*)appScope{
-  AccountViewControllerProvider provider = ^(){
+#pragma mark MyInfoViewControllerProvider
++(MyInfoViewControllerProvider)injectMyInfoViewControllerProvider:(AppScope*)appScope{
+  MyInfoViewControllerProvider provider = ^(){
     
-		AccountViewController * controller = 
-    [[[AccountViewController alloc] initWithNibName:@"AccountViewController" 
-                                             bundle:nil] autorelease];
+    UserManager * userManager = [self injectUserManager:appScope];
+    
+		MyInfoViewController * controller = 
+    [[[MyInfoViewController alloc] initWithNibName:@"MyInfoViewController" 
+                                            bundle:nil
+                                       userManager:userManager] autorelease];
 		return controller;
 	};
 	return [[provider copy] autorelease];  
 }
+
+
 
 #pragma mark -
 #pragma mark CoreData
@@ -188,4 +198,19 @@
 }
 
 
+#pragma mark UserManager
++ (UserManager*)injectUserManager:(AppScope*)appScope{
+  ContactManager * contactManager = [self injectContactManager:appScope];
+  UserManager * userManager = [[[UserManager alloc] initWithContext:appScope.context
+                                                     contactManager:contactManager] 
+                               autorelease];
+  return userManager;
+}
+
+#pragma mark ContactManager
++ (ContactManager*)injectContactManager:(AppScope*)appScope{
+  ContactManager * contactManager = [[[ContactManager alloc] initWithContext:appScope.context] 
+                                     autorelease];
+  return contactManager;  
+}
 @end

@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "TypeDef.h"
 
+//Manager
+@class UserManager;
+@class ContactManager;
+
 @interface SIInjector : NSObject
 
 
@@ -26,13 +30,19 @@
 #pragma mark AlertViewControllerProvider
 +(AlertViewControllerProvider)injectAlertViewControllerProvider:(AppScope*)appScope;
 
-#pragma mark MyAgentsViewControllerProvider
-+(MyAgentsViewControllerProvider)injectMyAgentsViewControllerProvider:(AppScope*)appScope;
+#pragma mark InfoViewControllerProvider
++(InfoViewControllerProvider)injectInfoViewControllerProvider:(AppScope*)appScope;
 
-#pragma mark AccountViewControllerProvider
-+(AccountViewControllerProvider)injectAccountViewControllerProvider:(AppScope*)appScope;
+#pragma mark MyInfoViewControllerProvider
++(MyInfoViewControllerProvider)injectMyInfoViewControllerProvider:(AppScope*)appScope;
 
 #pragma mark -
 #pragma mark CoreData
 + (NSManagedObjectContext*)injectContext;
+
+#pragma mark UserManager
++ (UserManager*)injectUserManager:(AppScope*)appScope;
+
+#pragma mark ContactManager
++ (ContactManager*)injectContactManager:(AppScope*)appScope;
 @end

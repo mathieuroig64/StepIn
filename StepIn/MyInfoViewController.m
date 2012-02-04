@@ -1,22 +1,31 @@
 //
-//  AlertViewController.m
+//  MyInfoViewController.m
 //  StepIn
 //
-//  Created by Mathieu ROIG on 1/29/12.
+//  Created by Mathieu ROIG on 2/4/12.
 //  Copyright (c) 2012 Kadrige. All rights reserved.
 //
 
-#import "AlertViewController.h"
+#import "MyInfoViewController.h"
+#import "User_CD.h"
+#import "UserManager.h"
 
-@implementation AlertViewController
+@implementation MyInfoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithNibName:(NSString *)nibNameOrNil 
+               bundle:(NSBundle *)nibBundleOrNil
+          userManager:(UserManager*)userManager
 {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
-    // Custom initialization
+    userManager_ = [userManager retain];
   }
   return self;
+}
+
+- (void)dealloc {
+  [userManager_ release];
+  [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,7 +41,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-  [self.navigationItem setTitle:@"Emergency"];
+  // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
