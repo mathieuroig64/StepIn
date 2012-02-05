@@ -1,15 +1,15 @@
 //
-//  TextFieldCell.m
+//  TextViewCell.m
 //  StepIn
 //
-//  Created by Mathieu ROIG on 30/01/12.
+//  Created by Mathieu ROIG on 2/5/12.
 //  Copyright (c) 2012 Kadrige. All rights reserved.
 //
 
-#import "TextFieldCell.h"
+#import "TextViewCell.h"
 
-@implementation TextFieldCell
-@synthesize textField = textField_;
+@implementation TextViewCell
+@synthesize textView = textView_;
 
 - (id)initWithStyle:(UITableViewCellStyle)style 
     reuseIdentifier:(NSString *)reuseIdentifier
@@ -22,7 +22,7 @@
 }
 
 - (void)dealloc {
-  [textField_ release];
+  [textView_ release];
   [super dealloc];
 }
 

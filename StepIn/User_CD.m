@@ -2,7 +2,7 @@
 //  User_CD.m
 //  StepIn
 //
-//  Created by Mathieu ROIG on 2/4/12.
+//  Created by Mathieu ROIG on 2/5/12.
 //  Copyright (c) 2012 Kadrige. All rights reserved.
 //
 
@@ -15,6 +15,7 @@
 @dynamic firstName;
 @dynamic info;
 @dynamic lastName;
+@dynamic enableLocation;
 @dynamic contacts;
 
 @end

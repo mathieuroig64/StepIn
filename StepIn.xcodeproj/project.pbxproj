@@ -27,8 +27,12 @@
 		D10D913B14DD897000A2B00E /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10D913914DD897000A2B00E /* MyInfoViewController.m */; };
 		D10D913C14DD897000A2B00E /* MyInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D10D913A14DD897000A2B00E /* MyInfoViewController.xib */; };
 		D183CF4514DD8D440056D236 /* Contact_CD.m in Sources */ = {isa = PBXBuildFile; fileRef = D183CF4414DD8D440056D236 /* Contact_CD.m */; };
-		D183CF4814DD8D450056D236 /* User_CD.m in Sources */ = {isa = PBXBuildFile; fileRef = D183CF4714DD8D450056D236 /* User_CD.m */; };
 		D183CF4C14DD8D9C0056D236 /* ContactManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D183CF4B14DD8D9C0056D236 /* ContactManager.m */; };
+		D19F49B514DEEBE400A6434D /* TextViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19F49B414DEEBE400A6434D /* TextViewCell.m */; };
+		D19F49B714DEEBF000A6434D /* TextViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19F49B614DEEBF000A6434D /* TextViewCell.xib */; };
+		D19F49BB14DEF8F200A6434D /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D19F49BA14DEF8F200A6434D /* SwitchCell.m */; };
+		D19F49BD14DEF8FD00A6434D /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D19F49BC14DEF8FD00A6434D /* SwitchCell.xib */; };
+		D19F49C014DEFBD400A6434D /* User_CD.m in Sources */ = {isa = PBXBuildFile; fileRef = D19F49BF14DEFBD400A6434D /* User_CD.m */; };
 		D1E7EB5F14D5B3E8002E3BF2 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E7EB5D14D5B3E8002E3BF2 /* AlertViewController.m */; };
 		D1E7EB6014D5B3E8002E3BF2 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E7EB5E14D5B3E8002E3BF2 /* AlertViewController.xib */; };
 		D1E7EB6914D5B6CD002E3BF2 /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = D1E7EB6814D5B6CD002E3BF2 /* alert.png */; };
@@ -72,10 +76,16 @@
 		D10D913A14DD897000A2B00E /* MyInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyInfoViewController.xib; sourceTree = "<group>"; };
 		D183CF4314DD8D440056D236 /* Contact_CD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact_CD.h; sourceTree = "<group>"; };
 		D183CF4414DD8D440056D236 /* Contact_CD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact_CD.m; sourceTree = "<group>"; };
-		D183CF4614DD8D450056D236 /* User_CD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_CD.h; sourceTree = "<group>"; };
-		D183CF4714DD8D450056D236 /* User_CD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User_CD.m; sourceTree = "<group>"; };
 		D183CF4A14DD8D9C0056D236 /* ContactManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactManager.h; sourceTree = "<group>"; };
 		D183CF4B14DD8D9C0056D236 /* ContactManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactManager.m; sourceTree = "<group>"; };
+		D19F49B314DEEBE400A6434D /* TextViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewCell.h; sourceTree = "<group>"; };
+		D19F49B414DEEBE400A6434D /* TextViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewCell.m; sourceTree = "<group>"; };
+		D19F49B614DEEBF000A6434D /* TextViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextViewCell.xib; sourceTree = "<group>"; };
+		D19F49B914DEF8F200A6434D /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchCell.h; sourceTree = "<group>"; };
+		D19F49BA14DEF8F200A6434D /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchCell.m; sourceTree = "<group>"; };
+		D19F49BC14DEF8FD00A6434D /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
+		D19F49BE14DEFBD400A6434D /* User_CD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_CD.h; sourceTree = "<group>"; };
+		D19F49BF14DEFBD400A6434D /* User_CD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User_CD.m; sourceTree = "<group>"; };
 		D1E7EB5C14D5B3E8002E3BF2 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
 		D1E7EB5D14D5B3E8002E3BF2 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		D1E7EB5E14D5B3E8002E3BF2 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
@@ -115,9 +125,8 @@
 		72D7549B14D67CA1001FCCA5 /* cell */ = {
 			isa = PBXGroup;
 			children = (
-				72D7549C14D67CBA001FCCA5 /* TextFieldCell.h */,
-				72D7549D14D67CBA001FCCA5 /* TextFieldCell.m */,
-				72D7549F14D67CC6001FCCA5 /* TextFieldCell.xib */,
+				D19F49B214DEEBBF00A6434D /* TextViewCell */,
+				D19F49B114DEEBAC00A6434D /* TextFieldCell */,
 			);
 			name = cell;
 			sourceTree = "<group>";
@@ -231,8 +240,8 @@
 			children = (
 				D183CF4314DD8D440056D236 /* Contact_CD.h */,
 				D183CF4414DD8D440056D236 /* Contact_CD.m */,
-				D183CF4614DD8D450056D236 /* User_CD.h */,
-				D183CF4714DD8D450056D236 /* User_CD.m */,
+				D19F49BE14DEFBD400A6434D /* User_CD.h */,
+				D19F49BF14DEFBD400A6434D /* User_CD.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -240,6 +249,7 @@
 		D10D913714DD895600A2B00E /* MyInfoViewController */ = {
 			isa = PBXGroup;
 			children = (
+				72D7549B14D67CA1001FCCA5 /* cell */,
 				D10D913814DD897000A2B00E /* MyInfoViewController.h */,
 				D10D913914DD897000A2B00E /* MyInfoViewController.m */,
 				D10D913A14DD897000A2B00E /* MyInfoViewController.xib */,
@@ -254,6 +264,36 @@
 				D183CF4B14DD8D9C0056D236 /* ContactManager.m */,
 			);
 			name = ContactManager;
+			sourceTree = "<group>";
+		};
+		D19F49B114DEEBAC00A6434D /* TextFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				72D7549C14D67CBA001FCCA5 /* TextFieldCell.h */,
+				72D7549D14D67CBA001FCCA5 /* TextFieldCell.m */,
+				72D7549F14D67CC6001FCCA5 /* TextFieldCell.xib */,
+			);
+			name = TextFieldCell;
+			sourceTree = "<group>";
+		};
+		D19F49B214DEEBBF00A6434D /* TextViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D19F49B314DEEBE400A6434D /* TextViewCell.h */,
+				D19F49B414DEEBE400A6434D /* TextViewCell.m */,
+				D19F49B614DEEBF000A6434D /* TextViewCell.xib */,
+			);
+			name = TextViewCell;
+			sourceTree = "<group>";
+		};
+		D19F49B814DEF8AB00A6434D /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				D19F49B914DEF8F200A6434D /* SwitchCell.h */,
+				D19F49BA14DEF8F200A6434D /* SwitchCell.m */,
+				D19F49BC14DEF8FD00A6434D /* SwitchCell.xib */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 		D1E7EB5914D5B3AB002E3BF2 /* Classes */ = {
@@ -300,7 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				D10D913714DD895600A2B00E /* MyInfoViewController */,
-				72D7549B14D67CA1001FCCA5 /* cell */,
+				D19F49B814DEF8AB00A6434D /* cells */,
 				D1E7EB6B14D5B879002E3BF2 /* InfoViewController.h */,
 				D1E7EB6C14D5B879002E3BF2 /* InfoViewController.m */,
 				D1E7EB6D14D5B879002E3BF2 /* InfoViewController.xib */,
@@ -368,6 +408,8 @@
 				72D754A014D67CC6001FCCA5 /* TextFieldCell.xib in Resources */,
 				D10D912314DD748A00A2B00E /* help.png in Resources */,
 				D10D913C14DD897000A2B00E /* MyInfoViewController.xib in Resources */,
+				D19F49B714DEEBF000A6434D /* TextViewCell.xib in Resources */,
+				D19F49BD14DEF8FD00A6434D /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,8 +433,10 @@
 				D10D912A14DD83E700A2B00E /* UserManager.m in Sources */,
 				D10D913B14DD897000A2B00E /* MyInfoViewController.m in Sources */,
 				D183CF4514DD8D440056D236 /* Contact_CD.m in Sources */,
-				D183CF4814DD8D450056D236 /* User_CD.m in Sources */,
 				D183CF4C14DD8D9C0056D236 /* ContactManager.m in Sources */,
+				D19F49B514DEEBE400A6434D /* TextViewCell.m in Sources */,
+				D19F49BB14DEF8F200A6434D /* SwitchCell.m in Sources */,
+				D19F49C014DEFBD400A6434D /* User_CD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

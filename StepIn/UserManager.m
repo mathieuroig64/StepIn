@@ -39,6 +39,22 @@
                                        inManagedObjectContext:context_]; 
 }
 
+- (User_CD*)setLocationAuthorizationToCurrentUserWithValue:(BOOL)value{
+  User_CD * currentUser = [self getCurrentUser];
+  if (!currentUser) {
+    currentUser = [self getNewUser];
+  }
+  [currentUser setEnableLocation:[NSNumber numberWithBool:value]];
+  
+  NSError * error = nil;
+  [context_ save:&error];
+  if (error) {
+    DLog(@"Error while setting location");
+    return nil;
+  }
+  return currentUser;
+}
+
 //Insert a new member
 - (User_CD*)insertNewUserWithFirstName:(NSString*)firstName
                               lastName:(NSString*)lastName

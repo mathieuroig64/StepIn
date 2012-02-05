@@ -24,4 +24,16 @@
                              isSMSEnabled:(BOOL)isSMSEnabled
                        isEmergencyContact:(BOOL)isEmergencyContact;
 
+- (Contact_CD*)updateContactWithFirstName:(NSString*)firstName
+                                 lastName:(NSString*)lastName
+                                    phone:(NSString*)phone
+                                    email:(NSString*)email
+                           isEmailEnabled:(BOOL)isEmailEnabled
+                             isSMSEnabled:(BOOL)isSMSEnabled
+                       isEmergencyContact:(BOOL)isEmergencyContact
+                               forContact:(Contact_CD*)contact;
+
+- (Contact_CD*)getContactWithFirstName:(NSString*)firstName
+                              lastName:(NSString*)lastName;
+
 @end

@@ -10,11 +10,17 @@
 #import "UserManager.h"
 #import "User_CD.h"
 #import "MyInfoViewController.h"
+#import "UIView+XIBLoading.h"
 
 @interface InfoViewController (PrivateMethods)
+//UI
+- (void)addEditButton;
+
 //Datas
 - (void)configureCells;
 - (UITableViewCell*)configureMyInfoCell;
+- (SwitchCell*)configureSwitchCellWithTitle:(NSString*)title
+                                       isOn:(BOOL)isOn;
 @end
 
 @implementation InfoViewController
@@ -55,12 +61,27 @@
   [super viewDidLoad];
   [self.navigationItem setTitle:@"Info"];
   [self configureCells];
+  [self addEditButton];
+}
+
+#pragma mark UI
+- (void)addEditButton{
+  [self.navigationItem setRightBarButtonItem:self.editButtonItem];
 }
 
 #pragma mark Datas
 - (void)configureCells{
   [cells_ release];
-  cells_ = [[NSArray alloc] initWithObjects:[self configureMyInfoCell], 
+  //Get the user
+  User_CD * currentUser = [userManager_ getCurrentUser];
+  
+  //My info cell
+  NSMutableArray * infosCell = [NSMutableArray array];
+  [infosCell addObject:[self configureMyInfoCell]];
+  [infosCell addObject:[self configureSwitchCellWithTitle:@"Enable location"
+                                                     isOn:[currentUser.enableLocation boolValue]]];
+   
+  cells_ = [[NSArray alloc] initWithObjects:infosCell, 
             nil];
 }
 
@@ -79,6 +100,16 @@
   return cell;
 }
 
+- (SwitchCell*)configureSwitchCellWithTitle:(NSString*)title
+                                       isOn:(BOOL)isOn{
+  SwitchCell * cell = [SwitchCell loadXIB:@"SwitchCell"
+                                 forClass:[SwitchCell class]];
+  [cell setDelegate:self];
+  [cell.titleLabel setText:title];
+  [cell.toggleSwitch setOn:isOn];
+  return cell;
+}
+
 - (void)viewDidUnload
 {
   [super viewDidUnload];
@@ -93,26 +124,49 @@
 }
 
 #pragma mark UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-  return 1;
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+  if (section == 0) {
+    return @"Personnal Info";
+  }else{
+    return nil;
+  }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
   return [cells_ count];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+  NSArray * sectionsCell = [cells_ objectAtIndex:section];
+  return [sectionsCell count];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  return [cells_ objectAtIndex:indexPath.row];
+  NSArray * sectionsCell = [cells_ objectAtIndex:indexPath.section];
+  return [sectionsCell objectAtIndex:indexPath.row];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   if (indexPath.section == 0) {
     //My info
     MyInfoViewController * myInfoController = myInfoProvider_();
+    [myInfoController setDelegate:self];
     [self.navigationController pushViewController:myInfoController
                                          animated:YES];
   }
   [tableView_ deselectRowAtIndexPath:indexPath
                             animated:YES];
+}
+
+#pragma mark MyInfoDelegate
+- (void)didSaveUserFor:(MyInfoViewController*)myInfoController{
+  [self configureCells];
+  [tableView_ reloadData];
+}
+
+#pragma mark SwitchDelegate
+- (void)didSwitchFor:(SwitchCell*)switchCell
+           withValue:(BOOL)value{
+  
 }
 @end

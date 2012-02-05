@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TypeDef.h"
+#import "MyInfoViewController.h"
+#import "SwitchCell.h"
 
 @class UserManager;
 
 @interface InfoViewController : UIViewController
-<UITableViewDelegate, UITableViewDataSource>{
+<UITableViewDelegate, UITableViewDataSource,
+MyInfoDelegate, SwitchDelegate>{
 @public
   UITableView * tableView_;
 @private

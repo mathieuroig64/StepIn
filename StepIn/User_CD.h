@@ -2,7 +2,7 @@
 //  User_CD.h
 //  StepIn
 //
-//  Created by Mathieu ROIG on 2/4/12.
+//  Created by Mathieu ROIG on 2/5/12.
 //  Copyright (c) 2012 Kadrige. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * info;
 @property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSNumber * enableLocation;
 @property (nonatomic, retain) NSSet *contacts;
 @end
 

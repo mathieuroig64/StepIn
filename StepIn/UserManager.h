@@ -20,6 +20,8 @@
 - (id)initWithContext:(NSManagedObjectContext *)context
        contactManager:(ContactManager*)contactManager;
 
+- (User_CD*)setLocationAuthorizationToCurrentUserWithValue:(BOOL)value;
+
 - (User_CD*)insertNewUserWithFirstName:(NSString*)firstName
                               lastName:(NSString*)lastName
                                   info:(NSString*)info;

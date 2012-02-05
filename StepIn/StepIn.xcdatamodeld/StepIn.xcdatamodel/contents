@@ -11,13 +11,14 @@
         <relationship name="forUser" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User_CD" inverseName="contacts" inverseEntity="User_CD" syncable="YES"/>
     </entity>
     <entity name="User_CD" representedClassName="User_CD" syncable="YES">
+        <attribute name="enableLocation" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="contacts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Contact_CD" inverseName="forUser" inverseEntity="Contact_CD" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User_CD" positionX="-2808" positionY="-405" width="128" height="105"/>
         <element name="Contact_CD" positionX="-2538" positionY="-489" width="128" height="165"/>
+        <element name="User_CD" positionX="-2808" positionY="-405" width="128" height="120"/>
     </elements>
 </model>
